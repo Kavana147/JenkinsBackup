@@ -1,0 +1,67 @@
+SSHLauncher{host='172.31.16.127', port=22, credentialsId='b39f85d8-7b81-4d99-a0d0-5580a00db9ea', jvmOptions='', javaPath='', prefixStartSlaveCmd='', suffixStartSlaveCmd='', launchTimeoutSeconds=60, maxNumRetries=10, retryWaitTime=15, sshHostKeyVerificationStrategy=hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy, tcpNoDelay=true, trackCredentials=true}
+[07/09/22 02:31:15] [SSH] Opening SSH connection to 172.31.16.127:22.
+[07/09/22 02:31:15] [SSH] WARNING: SSH Host Keys are not being verified. Man-in-the-middle attacks may be possible against this connection.
+[07/09/22 02:31:16] [SSH] Authentication successful.
+[07/09/22 02:31:16] [SSH] The remote user's environment is:
+DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1002/bus'
+HOME='/home/jenslave'
+IFS=' 	
+'
+LANG='C.UTF-8'
+LOGNAME='jenslave'
+MOTD_SHOWN='pam'
+OPTIND='1'
+PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+PPID='3682'
+PS1='$ '
+PS2='> '
+PS4='+ '
+PWD='/home/jenslave'
+SHELL='/bin/sh'
+SSH_CLIENT='172.31.26.34 43244 22'
+SSH_CONNECTION='172.31.26.34 43244 172.31.16.127 22'
+USER='jenslave'
+XDG_RUNTIME_DIR='/run/user/1002'
+XDG_SESSION_CLASS='user'
+XDG_SESSION_ID='9'
+XDG_SESSION_TYPE='tty'
+Checking Java version in the PATH
+sh: 1: java: not found
+Java is not in the PATH nor configured with the javaPath setting, Jenkins will try to guess where is Java, this guess will be removed in the future. :Launch agents via SSH
+[07/09/22 02:31:16] [SSH] Checking java version of /home/jenslave/jdk/bin/java
+Couldn't figure out the Java version of /home/jenslave/jdk/bin/java
+sh: 1: /home/jenslave/jdk/bin/java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of java
+Couldn't figure out the Java version of java
+sh: 1: java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of /usr/bin/java
+Couldn't figure out the Java version of /usr/bin/java
+sh: 1: /usr/bin/java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of /usr/java/default/bin/java
+Couldn't figure out the Java version of /usr/java/default/bin/java
+sh: 1: /usr/java/default/bin/java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of /usr/java/latest/bin/java
+Couldn't figure out the Java version of /usr/java/latest/bin/java
+sh: 1: /usr/java/latest/bin/java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of /usr/local/bin/java
+Couldn't figure out the Java version of /usr/local/bin/java
+sh: 1: /usr/local/bin/java: not found
+
+[07/09/22 02:31:16] [SSH] Checking java version of /usr/local/java/bin/java
+Couldn't figure out the Java version of /usr/local/java/bin/java
+sh: 1: /usr/local/java/bin/java: not found
+
+java.io.IOException: Java not found on hudson.slaves.SlaveComputer@2b28ae96. Install Java 8 or Java 11 on the Agent.
+	at hudson.plugins.sshslaves.JavaVersionChecker.resolveJava(JavaVersionChecker.java:83)
+	at hudson.plugins.sshslaves.SSHLauncher.lambda$launch$0(SSHLauncher.java:453)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[07/09/22 02:31:16] Launch failed - cleaning up connection
+[07/09/22 02:31:16] [SSH] Connection closed.
